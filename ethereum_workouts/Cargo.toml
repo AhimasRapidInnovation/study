@@ -1,0 +1,13 @@
+[package]
+name = "ethereum_workouts"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ethers-providers = "0.10.0"
+ethers = "0.6.2"
+dotenv = "0.15.0"
+anyhow = "*"
+tokio = {version ="1.18.2", features=["full"]}
