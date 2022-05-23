@@ -144,6 +144,98 @@ It requires `N` signatures out of `M` posiible acceptable signature (where  N <=
 
 majority of key-holders must agree and sign in order for the contract to execute.
 
+### Data 
+
+Any contract data must be assigned to a location  
+either to `storage` or `memory`. It is costly to modify the storage in smart contract 
+
+### Storage
+
+Storage is refereced by `state variable` 
+These values get stored permanently on the blockchain
+
+```js
+// Solidity example
+contract SimpleStorage {
+    uint storedData; // State variable
+    // ...
+}
+
+```
+
+> address can hold ethereum address which equates to 20 bytes or 160 bits 
+> Returns hexadecimal notion leading 0x
+
+### Memory
+
+Values are only stored for the lifetime of a contract fuctions's execution. 
+
+These are not permanently stored on blockchain (cheap to use)
+
+### Environment Variable
+
+Special `global variable`  
+
+Primarly used to provide information about the `blockchain` or `current transaction` 
+
+`block.timestamp`   **uinit256**  _current block epoch time_
+`msg.sender`        **address**    _sender of the message_
+
+
+### Functions
+
+Function can get information or set information in response to incoming transactions
+
+* Iternal - Donot create a EVM call
+  
+  * Internal functions and state variables can only be accessed internally
+  
+  * Can be calld `public`
+
+    * Can be called internally from within the contract or externally via message
+
+* External - Do create EVM call
+  
+  * Part of contract interface
+  
+  * Can be called from other `contracts`
+  
+  * External function f cannot  be called `internally`
+  
+  * Can be called `private functions`
+  
+    * Only visible for the contract they are defined in and not in dervied contracts
+
+```js
+// Solidity example
+function update_name(string value) public {
+    dapp_name = value;
+}
+
+```
+
+### View Functions
+
+These functions do not modify the state of contract's data 
+
+```js
+// Solidity example
+function balanceOf(address _owner) public view returns (uint256 _balance) {
+    return ownerPizzaCount[_owner];
+}
+
+```
+
+### Constructor functions
+
+Only executed once when contract is first deployed
+
+```js
+constructor() public {
+    owner = msg.sender;
+}
+```
+
 
 ## EVM (Ethereum virtual Machine)
 
