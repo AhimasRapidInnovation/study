@@ -112,6 +112,39 @@ User account can interact with a smart contract by submitting transactios that e
 
 Smart contract cannot be delete by default and interaction with them are `irreversible`
 
+### Creation of smart contract and deployment
+
+* Solidity
+
+* Vyper
+
+Should have enough `ETH` to deploy the `contract`  
+Deploying a `smart contract` technically a `transaction` so neet specigy `GAS` and gas cost higher for `contract`
+
+### Permissionless
+
+Program must be compiled before they can be deployed so that `Ethereum's` virtual machine can interpret and store the contract
+
+### Composability
+
+Can call other smart contracts in smart contract
+
+### Limitation
+
+Smart contracts cannot send `http` request to get other informartion use `oracle` to get around this
+
+### Mutli-Sig Contracts
+
+Smart contract that require multiple valid signature to execute a transaction
+Useful for avoiding single points of failure 
+
+Divide  responsibility for contract execution and key managment between multiple parties 
+
+It requires `N` signatures out of `M` posiible acceptable signature (where  N <=M and M > 1)
+
+majority of key-holders must agree and sign in order for the contract to execute.
+
+
 ## EVM (Ethereum virtual Machine)
 
 Single entity maintained by thousands of connected computers running an `ethereum` client  
