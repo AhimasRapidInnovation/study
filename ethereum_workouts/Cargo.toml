@@ -11,3 +11,4 @@ ethers = "0.6.2"
 dotenv = "0.15.0"
 anyhow = "*"
 tokio = {version ="1.18.2", features=["full"]}
+web3 = "0.18.0"
