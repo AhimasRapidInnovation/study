@@ -19,4 +19,4 @@ Refer to fact that each `block` cryptpgraphically references its `parent`
 
 ## Meta Mask
 
-Ethereum Wallet
+third-party tool that allows you to connect to the Ether-eum network without accessing an Ethereum client or the wallet.
